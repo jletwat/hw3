@@ -20,5 +20,8 @@ class PlacesController < ApplicationController
   #  # redirect user
     redirect_to "/places"
   end
+
+  def show
+  end
   
 end
