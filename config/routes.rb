@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get("/places", {:controller => "places", :action => "index"})
   # Defines the root path route ("/")
   # get("/", { :controller => "articles", :action => "index" })
-  resources "places"
-  resources "entries"
+  resources "places" do
+    resources "entries"
+  end
 end

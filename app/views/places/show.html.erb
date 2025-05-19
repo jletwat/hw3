@@ -3,13 +3,17 @@
 <ul>
   <% for entry in @place.entries %>
     <li>
-      <a href="/entries/<%= entry["id"]%>">
-        <%= entry["name"] %>
-      </a>
+      <%= entry["title"] %> <br>
+      <%= entry["visited"] %> <br>
+      <%= entry["description"] %>
     </li>
   <% end %>
 </ul>
 
 <p>
-  <a href="/entries/new">New Post</a>
+  <a href="/places/<%= @place.id %>/entries/new">New Post</a>
+</p>
+
+<p>
+  <a href="/places/">Return to Places I've Been</a>
 </p>

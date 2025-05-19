@@ -1,13 +1,26 @@
-<h1>New Post</h1>
+<h1>New Entry for <%= @place.name %></h1>
 
-<form action="/places" method="post">
-  <p>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name">
-  </p>
-  <button>Submit</button>
+<form action="/places/<%= @place.id %>/entries" method="post">
+  <%= csrf_meta_tags %>
+
+  <div>
+    <label for="entry_visited">Date</label>
+    <input type="date" name="entry[visited]" id="entry_visited">
+  </div>
+
+  <div>
+    <label for="entry_description">Notes</label>
+    <input type="text" name="entry[description]" id="entry_description">
+  </div>
+
+  <div>
+    <label for="entry_title">Title</label>
+    <input type="text" name="entry[title]" id="entry_title">
+  </div>
+
+  <button type="submit">Submit</button>
 </form>
-<br>
-<a href="/places">
-Return to Places I've Been
+
+<a href="/places/<%= @place.id %>">
+Return to <%= @place.name %>
 </a>
